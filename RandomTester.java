@@ -1,4 +1,5 @@
-
+import java.util.Random;
+import java.util.ArrayList;
 /**
  * Write a description of class RandomTester here.
  *
@@ -7,27 +8,38 @@
  */
 public class RandomTester
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class RandomTester
-     */
-    public RandomTester()
-    {
-        // initialise instance variables
-        x = 0;
+    private Random rand;
+    private ArrayList<String> responses;
+    
+    public RandomTester() {
+        rand = new Random();
+        responses = new ArrayList<>();
+        responses.add("yes");
+        responses.add("no");
+        responses.add("maybe");
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public void printOneRandom() {
+        System.out.println(rand.nextInt());
     }
+
+    public void printMultiRandom(int howMany) {
+        for (int i = 0; i < howMany; i++) {
+            System.out.println(rand.nextInt());
+        }
+    }
+    
+    public int throwDice(){
+        return rand.nextInt(6)+1;
+    }
+    
+    public String getResponse(){
+        return responses.get(rand.nextInt(responses.size()));
+    }
+    
+    public int getRandomNumber(int min, int max){
+        return rand.nextInt((min-max) + 1) + min;
+    }
+    
 }
+
