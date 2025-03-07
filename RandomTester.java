@@ -1,4 +1,4 @@
-import java.util.Random;
+
 /**
  * Write a description of class RandomTester here.
  *
@@ -7,23 +7,27 @@ import java.util.Random;
  */
 public class RandomTester
 {
-    private Random rand;
-    
-    public RandomTester(){
-        rand = new Random();
+    // instance variables - replace the example below with your own
+    private int x;
+
+    /**
+     * Constructor for objects of class RandomTester
+     */
+    public RandomTester()
+    {
+        // initialise instance variables
+        x = 0;
     }
-    
-    public void printOneRandom(){
-        System.out.println(rand.nextInt());
-    }
-    
-    public void printMultiRandom(int howMany){
-        for( int i = 0; i < howMany; i++){
-            System.out.println(rand.nextInt());
-        }
-    }
-    
-    public int throwDice(){
-        return rand.nextInt(6)+1;
+
+    /**
+     * An example of a method - replace this comment with your own
+     *
+     * @param  y  a sample parameter for a method
+     * @return    the sum of x and y
+     */
+    public int sampleMethod(int y)
+    {
+        // put your code here
+        return x + y;
     }
 }
