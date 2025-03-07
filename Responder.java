@@ -34,6 +34,10 @@ public class Responder
      */
     public String generateResponse()
     {
-        return "That sounds interesting. Tell me more...";
+        if (responses.isEmpty()){
+            return "No responses availabe";
+        }
+        int index = rand.nextInt(responses.size());
+        return responses.get(index);
     }
 }
