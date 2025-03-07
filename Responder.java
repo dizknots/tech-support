@@ -27,12 +27,20 @@ public class Responder
        responses.put("wyd", "nth");
     }
     
+    private String pickDefaultResponse(){
+        return "idk";
+    }
+    
     /**
      * Generate a response.
      * @return   A string that should be displayed as the response
      */
-    public String generateResponse()
+    public String generateResponse(String word)
     {
-        return("huh");
+        String answer = responses.get(word);
+        if(answer == null){
+            answer = pickDefaultResponse();
+        }
+        return answer;
     }
 }
